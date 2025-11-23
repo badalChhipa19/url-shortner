@@ -3,6 +3,7 @@
  */
 import express from "express";
 import { fileURLToPath } from "url";
+import path from "path";
 
 /**
  * Internal Dependencies
@@ -30,7 +31,7 @@ app.route("/:code").get(redirectLink).delete(deleteLink);
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "frontend", "dist")));
-app.get("*", (req, res) => {
+app.get("/{*splat}", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
