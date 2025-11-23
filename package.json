@@ -1,15 +1,18 @@
 {
-  "name": "aganitha",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "URL shortener app",
+  "description": "URL shortener backend",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm start",
-    "client": "cd client && npm run dev"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd frontend && npm install && npm run build"
   },
   "author": "Badal Chhipa",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^9.2.1"
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }
