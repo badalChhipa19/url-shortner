@@ -7,7 +7,6 @@ import initDb from "./initDb.js";
 
 // Fetch environment variables.
 const { PORT } = process.env;
-
 // Initialize DB.
 initDb().catch((err) => {
   console.error("DB init failed:", err);

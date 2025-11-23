@@ -2,6 +2,7 @@
  * External Dependencies
  */
 import express from "express";
+import cors from "cors";
 
 /**
  * Internal Dependencies
@@ -16,6 +17,8 @@ import {
 } from "./controllers/dashboardController.js";
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

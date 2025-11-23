@@ -1,0 +1,13 @@
+.healthz {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}

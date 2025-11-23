@@ -42,12 +42,6 @@ export const createLink = async (req, res) => {
     // Check if the url is invalid.
     try {
       new URL(url);
-
-      // try to fetch the URL to ensure it's reachable.
-      const response = await fetch(url, { method: "HEAD" });
-      if (!response.ok) {
-        throw new Error("URL not reachable");
-      }
     } catch {
       return res
         .status(400)
@@ -96,9 +90,11 @@ export const redirectLink = async (req, res) => {
     ]);
 
     if (linkQuery.rows.length === 0) {
-      return res
-        .status(404)
-        .json({ status: "fail", data: { error: "Not found" } });
+      return res.status(404).json({
+        status: "fail",
+        status_code: 404,
+        data: { error: "Page Not found" },
+      });
     }
 
     await pool.query(
