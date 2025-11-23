@@ -12,7 +12,7 @@ export default function HealthzPage() {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch("api/healthz")
+    fetch("/api/healthz")
       .then((res) => res.json())
       .then((data) => setStats(data))
       .catch((err) => console.error("Failed to load health stats:", err));

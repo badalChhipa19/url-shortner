@@ -19,7 +19,7 @@ export const InputBox = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("api/", {
+      const response = await fetch("/api/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code: shortCode, url }),

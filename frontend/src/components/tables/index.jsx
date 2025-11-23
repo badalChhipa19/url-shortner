@@ -13,7 +13,7 @@ export const Table = () => {
 
   // Initial load from backend
   useEffect(() => {
-    fetch("api/")
+    fetch("/api/")
       .then((res) => res.json())
       .then((data) => setLinks(data.data.links));
   }, []);
@@ -23,7 +23,7 @@ export const Table = () => {
       // Optimistic UI update
       setLinks(links.filter((link) => link.code !== code));
 
-      const response = await fetch(`api/${code}`, {
+      const response = await fetch(`/api/${code}`, {
         method: "DELETE",
       });
 
