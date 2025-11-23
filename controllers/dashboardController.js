@@ -66,7 +66,10 @@ export const createLink = async (req, res) => {
       url,
     ]);
 
-    const shortUrl = `${HOST}/${shortCode}`;
+    const protocol = req.protocol;
+    const host = req.get("host");
+    const shortUrl = `${protocol}://${host}/${shortCode}`;
+
     return res.status(201).json({
       status: "success",
       data: {
