@@ -13,7 +13,7 @@ export const Table = () => {
 
   // Initial load from backend
   useEffect(() => {
-    fetch("/")
+    fetch("api/")
       .then((res) => res.json())
       .then((data) => setLinks(data.data.links));
   }, []);
@@ -23,7 +23,7 @@ export const Table = () => {
       // Optimistic UI update
       setLinks(links.filter((link) => link.code !== code));
 
-      const response = await fetch(`/${code}`, {
+      const response = await fetch(`api/${code}`, {
         method: "DELETE",
       });
 
@@ -35,8 +35,6 @@ export const Table = () => {
       alert(`Link ${code} deleted successfully`);
     } catch (err) {
       console.error("Error deleting link:", err.message);
-      // Optionally rollback UI if delete failed
-      setLinks(await fetch("/api/links").then((res) => res.json()));
     }
   };
 

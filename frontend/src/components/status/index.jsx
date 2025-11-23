@@ -17,7 +17,7 @@ export const Status = () => {
   useEffect(() => {
     const fun = async () => {
       console.log("Fetching stats for code:", code);
-      fetch(`/code/${code}`)
+      fetch(`api/code/${code}`)
         .then((res) => {
           if (!res.ok) throw new Error("Link not found");
           return res.json();
