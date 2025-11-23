@@ -2,10 +2,18 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "URL shortener backend",
-  "main": "app.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Badal Chhipa",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11",
+    "pg": "^8.16.3"
+  }
 }
