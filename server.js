@@ -17,7 +17,4 @@ initDb().catch((err) => {
 app.listen(PORT, (err) => {
   // If Error return early.
   if (err) return console.log(`Server Failed..`);
-
-  // Console that server is running.
-  console.log("\x1b[34m", `Server is running at ${PORT}`);
 });

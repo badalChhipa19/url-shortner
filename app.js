@@ -24,10 +24,10 @@ const app = express();
 
 app.use(express.json());
 
-app.route("api/").get(getLinks).post(createLink);
-app.route("api/healthz").get(healthCheck);
-app.route("api/code/:code").get(getLinkStatus);
-app.route("api/:code").get(redirectLink).delete(deleteLink);
+app.route("/api/").get(getLinks).post(createLink);
+app.route("/api/healthz").get(healthCheck);
+app.route("/api/code/:code").get(getLinkStatus);
+app.route("/api/:code").get(redirectLink).delete(deleteLink);
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "frontend", "dist")));

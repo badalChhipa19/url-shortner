@@ -12,6 +12,4 @@ export default async () => {
         last_clicked TIMESTAMP
     );
     `);
-
-  console.log("Database initialized");
 };

@@ -2,6 +2,7 @@
  * External dependencies.
  */
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 /**
  * Internal dependencies.
@@ -55,7 +56,7 @@ export const Table = () => {
             links.map((link) => (
               <tr key={link.code}>
                 <td>
-                  <a href={`/${link.code}`}>{link.code}</a>
+                  <a href={`api/${link.code}`}>{link.code}</a>
                 </td>
                 <td>{link.url}</td>
                 <td>{link.hits}</td>
