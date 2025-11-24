@@ -92,7 +92,7 @@ export const redirectLink = async (req, res) => {
       code,
     ]);
 
-    if (linkQuery.rows.length === 0) {
+    if (linkQuery.rowCount === 0) {
       return res.status(404).json({
         status: "fail",
         status_code: 404,
